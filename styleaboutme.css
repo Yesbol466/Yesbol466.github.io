@@ -1,0 +1,77 @@
+/* about-me.css */
+
+/* Import existing styles */
+@import url('style.css');
+body, html {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(120deg, #0a0f0b, #123534, #1c3a3e);
+    background-image:url(images/protphoto.jpg);
+    color: #fff;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Custom styles for the About Me page */
+/* Layout for the side sections */
+.side-section {
+    color: #aaffaa; /* Text color similar to the neon effect */
+    font-size: 2em; /* Large font size for section titles */
+    margin: 20px 0; /* Space above and below the section */
+    padding: 10px; /* Padding inside the sections */
+}
+
+/* Specific styles for the 'STUDY' and 'HOBBIES' sections */
+#study, #hobbies {
+    float: left; /* Align 'STUDY' to the left and 'HOBBIES' to the right */
+    width: 20%; /* Width of these sections */
+    text-align: left; /* Align text to the left */
+}
+
+/* Central section for 'STRONG SIDES' */
+#strong-sides {
+    margin: 0 auto; /* Center this section */
+    width: 60%; /* Width of this section */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding */
+    background-color: rgba(18, 53, 52, 0.75); /* Semi-transparent background */
+    border: 1px solid #2bff38; /* Neon-like border */
+    box-shadow: 0 0 10px #2bff38; /* Neon-like glow */
+}
+
+/* Styles for the photo panel */
+.photo-panel {
+    margin: 20px 0; /* Margin above and below the photo panel */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-evenly; /* Even spacing between elements */
+}
+
+/* Styles for the individual photos */
+.photo-panel img {
+    border: 3px solid #2bff38; /* Neon-like border around the photo */
+    width: 45%; /* Width of the photo */
+    height: auto; /* Auto-height to maintain aspect ratio */
+}
+
+/* Hover effect for photos */
+.glow-on-hover:hover {
+    transform: scale(1.1); /* Scale up photo on hover */
+    box-shadow: 0 0 20px #2bff38; /* Glow effect on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    /* Stack the side sections and the photo panel */
+    #study, #hobbies, #strong-sides, .photo-panel {
+        float: none;
+        width: auto;
+        text-align: center;
+    }
+
+    /* Adjust photo sizes on smaller screens */
+    .photo-panel img {
+        width: 100%;
+    }
+}
+
+/* End of about-me.css */

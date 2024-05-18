@@ -1,0 +1,477 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography and layout */
+body, html {
+    font-family: 'Copperplate', sans-serif;
+    background: linear-gradient(120deg, #0a0f0b, #123534, #1c3a3e);
+    background-image:url(images/protphoto.jpg);
+    color: #fff;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Neon effect adjustments for a darker theme */
+.neon-text, a, button {
+    text-shadow:
+        0 0 5px #2bff38,
+        0 0 10px #2bff38,
+        0 0 20px #29a329;
+    color: #aaffaa;
+}
+
+a:hover, button:hover {
+    text-shadow:
+        0 0 10px #2bff38,
+        0 0 20px #2bff38,
+        0 0 30px #29a329;
+}
+
+/* Navigation buttons in one line */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.button {
+    background-color: #123534;
+    color: #aaffaa;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #2bff38;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1c3a3e;
+}
+
+/* Thinner timeline for resume, adapted for darker theme */
+.timeline-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.left-timeline{
+    width: 48%;
+    padding-left: 60%;
+}
+.right-timeline{
+    width: 48%;
+    padding-right: 60%;
+}
+.timeline {
+    border-left: 2px solid #2bff38;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.timeline-event {
+    margin-bottom: 50px;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+.timeline li {
+    margin-bottom: 20px; 
+}
+
+
+/* Adjustments for overall layout to center content */
+.container, .main, .section {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+/* Keyframes for neon animation, toned down */
+@keyframes neon {
+    0%, 100% {
+        text-shadow:
+            0 0 5px #2bff38,
+            0 0 10px #2bff38,
+            0 0 20px #29a329;
+    }
+    50% {
+        text-shadow:
+            0 0 10px #2bff38,
+            0 0 20px #2bff38,
+            0 0 30px #29a329;
+    }
+}
+.button-container {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly around each button */
+    align-items: center; /* Aligns buttons vertically */
+}
+.main-heading {
+    font-size: 5em; /* Bigger font size for the main heading */
+    margin-bottom: 20px; /* Add some space below the heading */
+    text-align: center;
+    width: 100%; /* Ensure the heading is full width */
+    position: absolute; /* Position it absolutely to the top */
+    top: 70px; /* Adjust the top value as needed */
+    left: 50%;
+    transform: translateX(-50%); /* Center the heading */
+    z-index: 10; /* Ensure it's above other elements */
+    animation: neon 1.5s ease-in-out infinite alternate; /* Apply the neon animation */
+}
+.nav-button {
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-decoration: none; /* Removes underline from links */
+    color: #FFF; /* Set the text color */
+    /* Add more styling here to fit your neon theme */
+}
+
+/* Existing CSS content */
+
+/* Responsive image panel with glowing effect */
+.photo-panel {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+}
+
+.responsive-image {
+    max-width: 70%; /* Reducing the maximum width */
+    height: auto; /* Keeps the aspect ratio intact */
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-left:20%; /* Adds automatic margins to center the images if they are smaller than the max-width */
+}
+
+
+.responsive-image.glow-on-hover:hover {
+    transform: scale(1.05); /* Slightly scale the image */
+    box-shadow: 0 0 10px #2bff38; /* Neon glow effect */
+}
+
+/* Ensuring images stack on smaller screens */
+@media (max-width: 768px) {
+    .photo-panel {
+        flex-direction: column;
+    }
+
+    .responsive-image {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .timeline-wrapper{
+        flex-direction: column;
+    }
+    .left-timeline,.right-timeline{
+        width: 100%;
+    }
+}
+
+/* Additional CSS to ensure text is centered below the photo panel */
+.about {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Correcting a typo in your class attribute */
+.col-6.bg-dark.text-white.text-center {
+    clear: "col-6 bg-dark text-white text-center";
+}
+.text-container {
+    max-width: 800px; /* Or adjust to fit the width of the photos */
+    margin: 20px auto; /* Centers the container with automatic horizontal margins */
+    padding: 10px;
+    text-align: center;
+}
+/* Styles for the contact form to match neon cyberpunk theme */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #0a0f0b; /* Dark background */
+    border-radius: 8px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #2bff38; /* Neon style border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #123534;
+    color: #aaffaa;
+}
+
+.contact-form button {
+    width: 100%;
+    background-color: #123534;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #2bff38;
+}
+
+.contact-form button:hover {
+    background-color: #1c3a3e;
+    box-shadow: 0 0 10px #2bff38;
+}
+
+/* Styles for the social media buttons */
+/* Social Media Buttons */
+.social-media-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-button {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    color: #aaffaa; /* Adjust the color to match your neon theme */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-button:hover {
+    color: #2bff38; /* Adjust the hover color to match your neon theme */
+    transform: scale(1.1); /* Scale effect on hover */
+}
+/* Add this to your existing style.css file */
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.project {
+    position: relative;
+    text-decoration: none;
+}
+
+.project img {
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 1.2em;
+    display: none;
+}
+
+.project:hover .project-title {
+    display: block;
+}
+
+.glow-on-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #2bff38; /* Neon glow effect */
+}
+
+@media (max-width: 768px) {
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+.resume-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* Adjust the timeline styles */
+.timeline {
+    border-left: 2px solid #2bff38;
+    padding: 20px;
+    /* Remove max-width to allow for full width within the column */
+}
+
+/* ... other styles remain unchanged ... */
+
+@media (max-width: 768px) {
+    /* Adjust for smaller screens */
+    .resume-main {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        padding: 0;
+    }
+}
+/* ... your existing CSS content ... */
+
+/* Adjustments for the skills section */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.skills-list {
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+}
+
+.skills-list li {
+    padding: 5px 0; /* Adjust vertical space as desired */
+    position: relative;
+    padding-left: 20px; /* Space for the dot */
+}
+
+.skills-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.qr-code {
+    position: absolute;
+    right: 20px; /* Adjust as needed */
+    bottom: 20px; /* Adjust as needed */
+}
+
+.qr-code img {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+}
+.hero1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: left; /* Align text to the left */
+}
+
+.left-column{
+    width: 60%; /* Image takes up half the width */
+    padding-right: 20px; /* Add some spacing between the image and the text */
+    display: flex;
+    justify-content: flex-start; /* Align to the left side */
+    align-items: center
+}
+.left-column1{
+    width: 50%; /* Image takes up half the width */
+    padding-right: 20px; /* Add some spacing between the image and the text */
+}
+
+.right-column {
+    width: 50%; /* Text takes up the other half */
+    padding-left: 20px; /* Add some spacing between the text and the image */
+    font-size: 1.2em; /* Increase font size as needed */
+}
+
+.profile-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: add rounded corners to the image */
+}
+
+@media (max-width: 768px) {
+    /* Adjustments for mobile responsiveness */
+    .skills-container {
+        flex-direction: column;
+    }
+    .qr-code {
+        position: static;
+        margin-top: 20px;
+        text-align: center;
+    }
+    footer {
+        position: static;
+    }
+    .hero {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        width: 100%;
+        padding: 0;
+    }
+    .right-column {
+        padding-top: 20px;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.self_describe{
+    color: darkgray;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.image-gallery img {
+    width: 300px; /* Adjust the width as needed */
+    height: auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #2bff38;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .image-gallery img {
+        margin-bottom: 20px;
+    }
+}
